@@ -5,6 +5,8 @@ People put LSP status to statusline or to corner as virtual text but you can als
 be displayed on cmdline thats empty most of the time anyway and 1 whole line is more than enough space for
 LSP status. Originally I wrote this for my dotfiles but I figured might as well just make it plugin.
 
+![lsp-status](/screenshots/lsp-status.gif)
+
 ## Usage
 
 Just require and call setup and thats it.

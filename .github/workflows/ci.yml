@@ -29,7 +29,7 @@ jobs:
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: autocomplete
+          vimdoc: lspecho
           treesitter: true
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:

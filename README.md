@@ -7,6 +7,10 @@ LSP status. Originally I wrote this for my dotfiles but I figured might as well 
 
 ![lsp-progress](https://github.com/deathbeam/lspecho.nvim/assets/5115805/206d75ac-8533-4758-a35f-1426eed8cf42)
 
+## Installation
+
+Just use [lazy.nvim](https://github.com/folke/lazy.nvim) or `:h packages` with git submodules or something else I don't care.
+Read the documentation of whatever you want to use.
 
 ## Usage
 

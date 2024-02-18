@@ -86,7 +86,7 @@ local function lsp_progress(err, progress, ctx)
 end
 
 function M.setup()
-    local old_handler = vim.lsp.handlers["$/progress"]
+    local old_handler = vim.lsp.handlers['$/progress']
     vim.lsp.handlers['$/progress'] = function(...)
         if old_handler then
             old_handler(...)

@@ -5,7 +5,7 @@ People put LSP progress to statusline or to corner as virtual text but you can a
 be displayed on cmdline thats empty most of the time anyway and 1 whole line is more than enough space for
 LSP status. Originally I wrote this for my dotfiles but I figured might as well just make it plugin.
 
-![lsp-status](/screenshots/lsp-status.gif)
+![lsp-status](https://github.com/deathbeam/lspecho.nvim/assets/5115805/98c2e4c3-f6c9-485a-9f9a-28468cc400ce)
 
 ## Usage
 

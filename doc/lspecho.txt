@@ -4,6 +4,7 @@
 Table of Contents                                  *lspecho-table-of-contents*
 
 1. lspecho.nvim                                         |lspecho-lspecho.nvim|
+  - Installation                           |lspecho-lspecho.nvim-installation|
   - Usage                                         |lspecho-lspecho.nvim-usage|
   - Similar projects                   |lspecho-lspecho.nvim-similar-projects|
 
@@ -17,6 +18,13 @@ also just echo it and it will be displayed on cmdline thats empty most of the
 time anyway and 1 whole line is more than enough space for LSP status.
 Originally I wrote this for my dotfiles but I figured might as well just make
 it plugin.
+
+
+INSTALLATION                               *lspecho-lspecho.nvim-installation*
+
+Just use lazy.nvim <https://github.com/folke/lazy.nvim> or |packages| with git
+submodules or something else I don’t care. Read the documentation of whatever
+you want to use.
 
 
 USAGE                                             *lspecho-lspecho.nvim-usage*

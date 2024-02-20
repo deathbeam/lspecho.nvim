@@ -38,7 +38,7 @@ local function log(msg)
         end
     end
 
-    vim.api.nvim_command(string.format('echo "%s"', string.sub(out, 1, vim.v.echospace)))
+    vim.api.nvim_command(string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace)))
 end
 
 local function lsp_progress(err, progress, ctx)

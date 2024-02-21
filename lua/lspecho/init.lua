@@ -7,7 +7,7 @@ local timer = vim.loop.new_timer()
 local function clear()
     timer:stop()
     timer:start(
-        1000,
+        M.config.decay,
         0,
         vim.schedule_wrap(function()
             last_message = ''

@@ -1,4 +1,4 @@
-*lspecho.txt*           For NVIM v0.8.0          Last change: 2024 February 20
+*lspecho.txt*           For NVIM v0.8.0          Last change: 2024 February 21
 
 ==============================================================================
 Table of Contents                                  *lspecho-table-of-contents*
@@ -29,10 +29,14 @@ you want to use.
 
 USAGE                                             *lspecho-lspecho.nvim-usage*
 
-Just require and call setup and thats it.
+Just require and call setup and thats it. **NOTE**: You dont need to provide
+the configuration, below is just default config, you can just call setup with
+no arguments for default.
 
 >lua
-    require("lspecho").setup()
+    require("lspecho").setup {
+        echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
+    }
 <
 
 

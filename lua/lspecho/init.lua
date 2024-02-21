@@ -2,6 +2,21 @@ local M = {}
 
 local series = {}
 local last_message = ''
+local timer = vim.loop.new_timer()
+
+local function clear()
+    timer:stop()
+    timer:start(
+        1000,
+        0,
+        vim.schedule_wrap(function()
+            last_message = ''
+            if M.config.echo then
+                vim.api.nvim_command('redraw | echo ""')
+            end
+        end)
+    )
+end
 
 local function log(msg)
     local client = msg.client or ''
@@ -88,11 +103,13 @@ local function lsp_progress(err, progress, ctx)
             message = (value.message or (cur and cur.message)) .. ' - Done',
         })
         series[token] = nil
+        clear()
     end
 end
 
 M.config = {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
+    decay = 1000, -- Message decay time in milliseconds
 }
 
 function M.message()

@@ -21,6 +21,7 @@ call setup with no arguments for default.
 ```lua
 require("lspecho").setup {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
+    decay = 1000, -- Message decay time in milliseconds
 }
 
 ```

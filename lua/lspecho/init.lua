@@ -1,6 +1,7 @@
 local M = {}
 
 local series = {}
+local last_message = ''
 
 local function log(msg)
     local client = msg.client or ''
@@ -38,7 +39,10 @@ local function log(msg)
         end
     end
 
-    vim.api.nvim_command(string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace)))
+    last_message = out
+    if M.config.echo then
+        vim.api.nvim_command(string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace)))
+    end
 end
 
 local function lsp_progress(err, progress, ctx)
@@ -85,7 +89,16 @@ local function lsp_progress(err, progress, ctx)
     end
 end
 
-function M.setup()
+M.config = {
+    echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
+}
+
+function M.message()
+    return last_message
+end
+
+function M.setup(config)
+    M.config = vim.tbl_deep_extend('force', M.config, config or {})
     local old_handler = vim.lsp.handlers['$/progress']
     vim.lsp.handlers['$/progress'] = function(...)
         if old_handler then

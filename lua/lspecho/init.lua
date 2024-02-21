@@ -109,7 +109,7 @@ end
 
 M.config = {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
-    decay = 1000, -- Message decay time in milliseconds
+    decay = 3000, -- Message decay time in milliseconds
 }
 
 function M.message()

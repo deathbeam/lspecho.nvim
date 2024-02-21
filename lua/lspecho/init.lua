@@ -41,7 +41,9 @@ local function log(msg)
 
     last_message = out
     if M.config.echo then
-        vim.api.nvim_command(string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace)))
+        vim.api.nvim_command(
+            string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace))
+        )
     end
 end
 

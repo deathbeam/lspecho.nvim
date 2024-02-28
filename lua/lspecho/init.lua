@@ -97,10 +97,12 @@ local function lsp_progress(err, progress, ctx)
         })
     elseif value.kind == 'end' then
         local cur = series[token]
+        local msg = value.message or (cur and cur.message)
+        msg = msg and msg .. ' - Done' or 'Done'
         log({
             client = client_name or (cur and cur.client),
             title = value.title or (cur and cur.title),
-            message = (value.message or (cur and cur.message)) .. ' - Done',
+            message = msg,
         })
         series[token] = nil
         clear()

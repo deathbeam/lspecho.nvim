@@ -1,4 +1,4 @@
-*lspecho.txt*           For NVIM v0.8.0          Last change: 2024 February 21
+*lspecho.txt*           For NVIM v0.8.0          Last change: 2024 February 28
 
 ==============================================================================
 Table of Contents                                  *lspecho-table-of-contents*

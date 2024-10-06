@@ -4,6 +4,10 @@ local series = {}
 local last_message = ''
 local timer = vim.loop.new_timer()
 
+local function escape_string(str)
+    return str:gsub('([\\"])', '\\%1')
+end
+
 local function clear()
     timer:stop()
     timer:start(
@@ -57,7 +61,7 @@ local function log(msg)
     last_message = out
     if M.config.echo then
         vim.api.nvim_command(
-            string.format('redraw | echo "%s"', string.sub(out, 1, vim.v.echospace))
+            string.format('redraw | echo "%s"', escape_string(string.sub(out, 1, vim.v.echospace)))
         )
     end
 end

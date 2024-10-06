@@ -1,4 +1,4 @@
-*lspecho.txt*           For NVIM v0.8.0          Last change: 2024 February 28
+*lspecho.txt*           For NVIM v0.8.0           Last change: 2024 October 06
 
 ==============================================================================
 Table of Contents                                  *lspecho-table-of-contents*
@@ -7,6 +7,7 @@ Table of Contents                                  *lspecho-table-of-contents*
   - Installation                           |lspecho-lspecho.nvim-installation|
   - Usage                                         |lspecho-lspecho.nvim-usage|
   - Similar projects                   |lspecho-lspecho.nvim-similar-projects|
+2. Links                                                       |lspecho-links|
 
 ==============================================================================
 1. lspecho.nvim                                         *lspecho-lspecho.nvim*

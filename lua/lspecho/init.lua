@@ -12,6 +12,7 @@ local function clear()
         vim.schedule_wrap(function()
             last_message = ''
             if M.config.echo then
+                vim.cmd.redraw()
                 vim.api.nvim_echo({ { '' } }, false, {})
             end
         end)
@@ -56,6 +57,7 @@ local function log(msg)
 
     last_message = out
     if M.config.echo then
+        vim.cmd.redraw()
         vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, false, {})
     end
 end

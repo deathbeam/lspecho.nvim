@@ -55,6 +55,7 @@ local function log(msg)
         end
     end
 
+    out = out:gsub('\n', ' ')
     last_message = out
     if M.config.echo then
         vim.cmd.redraw()

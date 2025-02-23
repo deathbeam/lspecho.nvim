@@ -15,8 +15,9 @@ Read the documentation of whatever you want to use.
 ## Usage
 
 Just require and call setup and thats it.
-**NOTE**: You dont need to provide the configuration, below is just default config, you can just
-call setup with no arguments for default.
+
+> [!NOTE]
+> You dont need to provide the configuration, below is just default config, you can just call setup with no arguments for default.
 
 ```lua
 require("lspecho").setup {
@@ -27,8 +28,3 @@ require("lspecho").setup {
 }
 
 ```
-
-## Similar projects
-
-- https://github.com/linrongbin16/lsp-progress.nvim - in statusline
-- https://github.com/j-hui/fidget.nvim - in corner

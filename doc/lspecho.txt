@@ -6,7 +6,6 @@ Table of Contents                                  *lspecho-table-of-contents*
 1. lspecho.nvim                                         |lspecho-lspecho.nvim|
   - Installation                           |lspecho-lspecho.nvim-installation|
   - Usage                                         |lspecho-lspecho.nvim-usage|
-  - Similar projects                   |lspecho-lspecho.nvim-similar-projects|
 2. Links                                                       |lspecho-links|
 
 ==============================================================================
@@ -30,23 +29,19 @@ you want to use.
 
 USAGE                                             *lspecho-lspecho.nvim-usage*
 
-Just require and call setup and thats it. **NOTE**: You dont need to provide
-the configuration, below is just default config, you can just call setup with
-no arguments for default.
+Just require and call setup and thats it.
 
+
+  [!NOTE] You dont need to provide the configuration, below is just default
+  config, you can just call setup with no arguments for default.
 >lua
     require("lspecho").setup {
         echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
         decay = 3000, -- Message decay time in milliseconds
         interval = 100, -- Minimum time between echo updates in milliseconds
+        attach_log = false, -- Attach to logMessage and showMessage
     }
 <
-
-
-SIMILAR PROJECTS                       *lspecho-lspecho.nvim-similar-projects*
-
-- https://github.com/linrongbin16/lsp-progress.nvim - in statusline
-- https://github.com/j-hui/fidget.nvim - in corner
 
 ==============================================================================
 2. Links                                                       *lspecho-links*

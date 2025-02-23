@@ -2,6 +2,7 @@ local M = {}
 
 local series = {}
 local last_message = ''
+local last_echo = 0
 local timer = vim.uv.new_timer()
 
 local function clear()
@@ -58,7 +59,11 @@ local function log(msg)
     out = out:gsub('\n', ' ')
     last_message = out
     if M.config.echo then
-        vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, false, {})
+        local current_time = vim.uv.now()
+        if current_time - last_echo >= M.config.interval then
+            vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, false, {})
+            last_echo = current_time
+        end
     end
 end
 
@@ -112,6 +117,7 @@ end
 M.config = {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
     decay = 3000, -- Message decay time in milliseconds
+    interval = 100, -- Minimum time between echo updates in milliseconds
 }
 
 function M.message()

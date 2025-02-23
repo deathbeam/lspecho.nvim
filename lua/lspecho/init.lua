@@ -58,7 +58,6 @@ local function log(msg)
     out = out:gsub('\n', ' ')
     last_message = out
     if M.config.echo then
-        vim.cmd.redraw()
         vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, false, {})
     end
 end

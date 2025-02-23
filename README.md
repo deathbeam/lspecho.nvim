@@ -23,6 +23,7 @@ require("lspecho").setup {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
     decay = 3000, -- Message decay time in milliseconds
     interval = 100, -- Minimum time between echo updates in milliseconds
+    attach_log = false, -- Attach to logMessage and showMessage
 }
 
 ```

@@ -25,6 +25,7 @@ local function log(msg)
     local title = msg.title or ''
     local message = msg.message or ''
     local percentage = msg.percentage or 0
+    local history = msg.history or false
 
     local out = ''
     if client ~= '' then
@@ -60,8 +61,9 @@ local function log(msg)
     last_message = out
     if M.config.echo then
         local current_time = vim.uv.now()
-        if current_time - last_echo >= M.config.interval then
-            vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, false, {})
+        if current_time - last_echo >= M.config.interval or history then
+            vim.cmd.redraw()
+            vim.api.nvim_echo({ { string.sub(out, 1, vim.v.echospace) } }, history, {})
             last_echo = current_time
         end
     end
@@ -114,10 +116,26 @@ local function lsp_progress(err, progress, ctx)
     end
 end
 
+local function lsp_log(err, message, ctx)
+    if err then
+        return
+    end
+
+    local client = vim.lsp.get_client_by_id(ctx.client_id)
+    local client_name = client and client.name or ''
+    local msg = message.message or ''
+    log({
+        client = client_name,
+        message = msg,
+        history = true,
+    })
+end
+
 M.config = {
     echo = true, -- Echo progress messages, if set to false you can use .message() to get the current message
     decay = 3000, -- Message decay time in milliseconds
     interval = 100, -- Minimum time between echo updates in milliseconds
+    attach_log = false, -- Attach to logMessage and showMessage
 }
 
 function M.message()
@@ -126,6 +144,16 @@ end
 
 function M.setup(config)
     M.config = vim.tbl_deep_extend('force', M.config, config or {})
+
+    if M.config.attach_log then
+        vim.lsp.handlers['window/logMessage'] = function(...)
+            lsp_log(...)
+        end
+        vim.lsp.handlers['window/showMessage'] = function(...)
+            lsp_log(...)
+        end
+    end
+
     local old_handler = vim.lsp.handlers['$/progress']
     vim.lsp.handlers['$/progress'] = function(...)
         if old_handler then

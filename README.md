@@ -1,3 +1,6 @@
+> [!WARNING]
+> Plugin moved to https://github.com/deathbeam/myplugins.nvim, all development will continue there
+
 # lspecho.nvim
 Just echo the LSP progress, its that simple.
 

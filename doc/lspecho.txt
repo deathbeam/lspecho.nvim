@@ -1,4 +1,4 @@
-*lspecho.txt*           For NVIM v0.8.0          Last change: 2025 February 23
+*lspecho.txt*            For NVIM v0.8.0            Last change: 2025 March 13
 
 ==============================================================================
 Table of Contents                                  *lspecho-table-of-contents*
@@ -7,6 +7,9 @@ Table of Contents                                  *lspecho-table-of-contents*
   - Installation                           |lspecho-lspecho.nvim-installation|
   - Usage                                         |lspecho-lspecho.nvim-usage|
 2. Links                                                       |lspecho-links|
+
+  [!WARNING] Plugin moved to https://github.com/deathbeam/myplugins.nvim, all
+  development will continue there
 
 ==============================================================================
 1. lspecho.nvim                                         *lspecho-lspecho.nvim*
